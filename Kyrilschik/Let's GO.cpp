@@ -9,6 +9,7 @@
 #include"Акфсешщт.h"
 #include"Time.h"
 #include"var.h"
+#include "Queue.h"
 
 using namespace std;
 enum Color
@@ -745,12 +746,11 @@ int main()
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
 	
-	var a = 10;
-	var b = "mama";
-	var c = 3.14;
-
-
-	//a = "papa";
+	Queue<int> q = { 1,5,7,6 };
+	//q.print();
+	q.enqueue(10);
+	q.print();
+	q.clear();
 
 	/*Array arr(10);
 	arr.set();
@@ -786,7 +786,6 @@ int main()
 
 	f1.print();				
 	f1 += f2;
-	//первое правило бойцовского клуба
 	Fraction f3 = f1 + 10;
 	Fraction f4 = 10 + f1;
 	f4.print();*/

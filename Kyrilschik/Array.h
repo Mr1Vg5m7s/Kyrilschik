@@ -117,7 +117,7 @@ public:
 		}
 		return sum;
 	}
-
+	/*
 	T max() const
 	{
 		T max = arr[0];
@@ -265,10 +265,9 @@ public:
 		{
 			
 		}
-	}
+	}*/
 
 };
-
 
 
 template<class T>
@@ -296,6 +295,5 @@ void Array<double>::set() const
 	{
 		arr[i] = 9.9999;
 	}
+	
 }
-
-
