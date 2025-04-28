@@ -1,7 +1,73 @@
 
 
 /*
-	int col = 2;
+* /*Library lib;
+	lib.load();
+	lib.print();
+	lib.edit(1);
+	lib.print();
+	lib.add(0);
+	lib.print();*/
+	/*int size = 0;
+	ifstream fin;
+	fin.open("pont.txt");
+	if (fin.is_open())
+	{
+		int a;
+		while (fin >> a)
+		{
+		}
+	}
+	*/
+
+	/*int* b = nullptr;
+	int size = 0;
+	ifstream fin;
+	fin.open("text.txt");
+	if (fin.is_open())
+	{
+		int a;
+		while (fin >> a)
+		{
+			addElemArray(b, size, a);
+		}
+	}
+	printArray(b, size);
+	int* c = nullptr;
+	fin.open("text.txt");
+	for (size_t i = 0; i < 5; i++)
+	{
+		if (b[i] % 2 == 0)
+		{
+			c[i] == b[i];
+		}
+	}
+	fin.close();
+	printArray(b, size);*/
+/*
+	const int size = 10;
+	Point p[size];
+	for (size_t i = 0; i < size; i++)
+	{
+		p[i].name = 'A' + i;
+		p[i].X = rand() % 10;
+		p[i].Y = rand() % 10;
+
+		p[i].print();
+	}
+	ofstream out("pont.txt");
+	for (size_t i = 0; i < size; i++)
+	{
+		out << p[i].name << " " << p[i].X << " " << p[i].Y << endl;
+	}*/
+
+	/*ofstream fout;
+	fout.open("text.txt");
+	for (size_t i = 0; i < 5; i++)
+	{
+		fout << a[i]<< " ";
+	}*/
+	/*int col = 2;
 	char buff[30];
 	char** pib = nullptr;
 	createArray2D(pib, col, 2);
@@ -23,8 +89,7 @@
 			if (t)
 				cout << t << endl;
 		}
-	}
-	*/
+	}*/
 
 	/*int a = 9;
 	int* pa = &a;

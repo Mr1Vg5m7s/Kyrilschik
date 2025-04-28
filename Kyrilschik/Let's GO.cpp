@@ -6,6 +6,9 @@
 
 #include"Array.h"
 #include"string.h"
+#include"Акфсешщт.h"
+#include"Time.h"
+#include"var.h"
 
 using namespace std;
 enum Color
@@ -741,77 +744,55 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
-
 	
+	var a = 10;
+	var b = "mama";
+	var c = 3.14;
 
-	/*Library lib;
-	lib.load();
-	lib.print();
-	lib.edit(1);
-	lib.print();
-	lib.add(0);
-	lib.print();*/
-	/*int size = 0;
-	ifstream fin;
-	fin.open("pont.txt");
-	if (fin.is_open())
-	{
-		int a;
-		while (fin >> a)
-		{
-		}
-	}
-	*/
 
-	/*int* b = nullptr;
-	int size = 0;
-	ifstream fin;
-	fin.open("text.txt");
-	if (fin.is_open())
-	{
-		int a;
-		while (fin >> a)
-		{
-			addElemArray(b, size, a);
-		}
-	}
-	printArray(b, size);
-	int* c = nullptr;
-	fin.open("text.txt");
-	for (size_t i = 0; i < 5; i++)
-	{
-		if (b[i] % 2 == 0)
-		{
-			c[i] == b[i];
-		}
-	}
-	fin.close();
-	printArray(b, size);*/
-/*
-	const int size = 10;
-	Point p[size];
-	for (size_t i = 0; i < size; i++)
-	{
-		p[i].name = 'A' + i;
-		p[i].X = rand() % 10;
-		p[i].Y = rand() % 10;
+	//a = "papa";
 
-		p[i].print();
-	}
-	ofstream out("pont.txt");
-	for (size_t i = 0; i < size; i++)
-	{
-		out << p[i].name << " " << p[i].X << " " << p[i].Y << endl;
-	}*/
+	/*Array arr(10);
+	arr.set();
+	arr.print();
+	arr.printIndex(5);
+	//cout << arr["one"] << endl;
+	//arr.print();
+	arr(10);
+	arr.print();
+	//arr.sumarr();
+	cout << ()*/
 
-	/*ofstream fout;
-	fout.open("text.txt");
-	for (size_t i = 0; i < 5; i++)
-	{
-		fout << a[i]<< " ";
-	}*/
+	/*Time t1(0, 0, 30);
+	Time t2(0, 0, 50);
+	Time t3 = t1 + t2;
+	Time t4 = t1 + 10;
+	t3.print();
+	t4.print();
+	Time t5 = 100 + t1;
+	Time t6 = t1 - t2;
+	t1 += t2;
+	t1 -= t2;
+	t1 <=> t2;
+	int s = t1;
+	t1.print();
+	t1++;
+	++t1;
+	t1--;
+	--t1;*/
 
-	//fout << "Hello C++" << endl;
+	/*Fraction f1(1, 2);
+	Fraction f2(1, 4);
+
+	f1.print();				
+	f1 += f2;
+	//первое правило бойцовского клуба
+	Fraction f3 = f1 + 10;
+	Fraction f4 = 10 + f1;
+	f4.print();*/
+
+
+
 
 	//Bank bank;
 	////
@@ -830,31 +811,30 @@ int main()
 	bank.clients[1].accounts = new Account;
 	strcpy_s(bank.clients[1].accounts[0].name, 4, "USD");
 	strcpy_s(bank.clients[1].accounts[0].number, 17, "669832424");*/
-
-		//cin.getline(st2, 80);
-		//strcpy_s(st2, 80, st1); // копирует из 1 в 2
-		//strncpy_s(st2, 80, st1, 5); // коопирует до указаного числа ( 5 )
-		//strcar_s(st2, 80, st1); // cклеить два рядка ( сначал st2 > st1 )
-		//strncat(st2, 80, st1, 5); // добавляет к 1 второй рядок НО только до (5) символов
-		//strcmp(st2, st1); // если 1 больше второго (>1) == (0) если 2 больше (<1)
-		//strncmp(st2,st1, 4) // сранения до числа (4)
-		//stricmp(st2,st1, 4) // без регистра
-		//strnicmp(st2,st1, 4) // и то и то
-		//char* t = strchr(st1,'a'); // находит совпадение и віводит от него
-			//if (t)
-			//cout << t << endl;
+	//cin.getline(st2, 80);
+	//strcpy_s(st2, 80, st1); // копирует из 1 в 2
+	//strncpy_s(st2, 80, st1, 5); // коопирует до указаного числа ( 5 )
+	//strcar_s(st2, 80, st1); // cклеить два рядка ( сначал st2 > st1 )
+	//strncat(st2, 80, st1, 5); // добавляет к 1 второй рядок НО только до (5) символов
+	//strcmp(st2, st1); // если 1 больше второго (>1) == (0) если 2 больше (<1)
+	//strncmp(st2,st1, 4) // сранения до числа (4)
+	//stricmp(st2,st1, 4) // без регистра
+	//strnicmp(st2,st1, 4) // и то и то
+	//char* t = strchr(st1,'a'); // находит совпадение и віводит от него
+	//if (t)
+		//cout << t << endl;
 		//char* t = strrchr(st1,'a'); // находит последние совпадение и віводит от него
-			//if (t)
-			//cout << t << endl;
-		//char* t = strstr(st1,st2); // находит совпадение в другом рядке
-			//if (t)
-			//cout << t << endl;
-		//cout << isalnum('a') << endl; // символ/цыфра
-		//cout << isalpha('a') << endl; // являеться буквой?
-		//cout << isdigit('a') << endl; // цыфра
+		//if (t)
+	//cout << t << endl;
+	//char* t = strstr(st1,st2); // находит совпадение в другом рядке
+		//if (t)
+		//cout << t << endl;
+	//cout << isalnum('a') << endl; // символ/цыфра
+	//cout << isalpha('a') << endl; // являеться буквой?
+	//cout << isdigit('a') << endl; // цыфра
 		//cout << ispunct('a') << endl; // пунктир
-		//cout << isprint('a') << endl; // печатное
-		//cout << isspace('a') << endl; // пробел?
+	//cout << isprint('a') << endl; // печатное
+	//cout << isspace('a') << endl; // пробел?
 		//cout << isupper('a') << endl; // капслук
-		//_strset_s(st1, '#'); //заполняет рядок ЭТИМ символом (#);
+	//_strset_s(st1, '#'); //заполняет рядок ЭТИМ символом (#);
 }
