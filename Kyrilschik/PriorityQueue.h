@@ -12,6 +12,8 @@ class PriorityQueue
 	Node<T,TPri>* first = nullptr;
 	Node<T, TPri>* last = nullptr;
 	size_t               size = 0;
+
+
 public:
 	PriorityQueue();
 	PriorityQueue(initializer_list<T> list);
@@ -29,6 +31,8 @@ public:
 	size_t length();
 
 };
+
+
 
 template<class T, class TPri>
 PriorityQueue<T, TPri>::PriorityQueue()

@@ -10,6 +10,7 @@
 #include"Time.h"
 #include"var.h"
 #include "Queue.h"
+#include"ForwardList.h"
 
 using namespace std;
 enum Color
@@ -746,11 +747,23 @@ int main()
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
 	
-	Queue<int> q = { 1,5,7,6 };
+	ForwardList<int> fl = { 1,8,6,1,4,5 };
+	fl.print();
+	fl.remove(2);
+	fl.print();
+	fl.sort();
+
+	for (size_t i = 0; i < fl.length(); i++)
+	{
+		fl[i] *= 2;
+	}
+
+	fl.print();
+	//Queue<int> q = { 1,5,7,6 };
 	//q.print();
-	q.enqueue(10);
-	q.print();
-	q.clear();
+	//q.enqueue(10);
+	//q.print();
+	//q.clear();
 
 	/*Array arr(10);
 	arr.set();

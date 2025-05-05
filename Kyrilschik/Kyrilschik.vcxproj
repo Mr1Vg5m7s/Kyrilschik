@@ -133,6 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Array.h" />
+    <ClInclude Include="ForwardList.h" />
     <ClInclude Include="PriorityQueue.h" />
     <ClInclude Include="Queue.h" />
     <ClInclude Include="REservoir.h" />
