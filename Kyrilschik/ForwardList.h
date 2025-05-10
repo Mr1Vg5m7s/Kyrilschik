@@ -1,6 +1,7 @@
 #pragma once
 #include<iostream>
 #include<initializer_list>
+#include<algorithm>
 
 #include "Node.h"
 
@@ -53,10 +54,6 @@ public:
 	ForwardList<T> operator+(const ForwardList<T>& list);
 };
 
-//for (size_t i = 0; i < fl.lenght(); i++)
-//{
-//swap(getNode[first + i]->value, getNode[first - i]->value)
-//}
 template<class T>
 Node<T>* ForwardList<T>::getNode(int index)
 {
@@ -71,6 +68,7 @@ Node<T>* ForwardList<T>::getNode(int index)
 template<class T>
 ForwardList<T>::ForwardList()
 {
+
 }
 
 template<class T>
@@ -85,20 +83,46 @@ ForwardList<T>::ForwardList(initializer_list<T> list)
 template<class T>
 ForwardList<T>::ForwardList(const ForwardList& list)
 {
+	first = nullptr;
+	last = nullptr;
+	size = 0;
+	if (list.first != nullptr)
+	{ 
+		Node<T>* pos = list.first;
+		while (pos != nullptr)
+		{
+			this->push_back(pos->value);
+			pos = pos->next;
+		}
+	}
+	
 }
 
 template<class T>
 ForwardList<T>& ForwardList<T>::operator=(const ForwardList& list)
 {
-	// TODO:    return
+	if (this == &list)
+	{
+		return *this;
+	}
+	else {
+		this->clear();
+		Node<T>* pos = list.first;
+		while (pos != nullptr)
+		{
+			this->push_back(pos->value);
+			pos = pos->next;
+		}
+	}
 }
+
 
 template<class T>
 ForwardList<T>::~ForwardList()
 {
 	this->clear();
 }
-
+////
 template<class T>
 void ForwardList<T>::push_front(T value)
 {
@@ -267,6 +291,15 @@ void ForwardList<T>::print()
 }
 
 template<class T>
+void ForwardList<T>::reverse()
+{
+	for (size_t i = 0; i < size; i++)
+	{
+		swap(getNode[first + i]->value, getNode[first - i]->value);
+	}
+}
+
+template<class T>
 void ForwardList<T>::sort()
 {
 	for (size_t i = 0; i < size; i++)
@@ -291,4 +324,24 @@ void ForwardList<T>::for_each(void(*method)(T&))
 		method(temp->value);
 		temp = temp->next;
 	}
+}
+
+template<class T>
+ForwardList<T> ForwardList<T>::operator+(const ForwardList<T>& list)
+{
+	ForwardList<T> result;
+	Node<T>* temp = first;
+	while (temp)
+	{
+		result.push_back(temp->value);
+		temp = temp->next;
+	}
+	temp = list.first;
+	while (temp)
+	{
+		result.push_back(temp->value);
+		temp = temp->next;
+	}
+	return result;
+
 }

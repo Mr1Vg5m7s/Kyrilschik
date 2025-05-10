@@ -6,6 +6,7 @@
 
 #include"Array.h"
 #include"string.h"
+#include"List.h"
 #include"Àךפסורשע.h"
 #include"Time.h"
 #include"var.h"
@@ -746,7 +747,19 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
-	
+
+	List<int> ls1 = { 1,2,3 };
+	ls1.print();
+	ls1.pop_back();
+	ls1.pop_front();
+	ls1.print();
+	ls1.push_back(3);
+	ls1.push_back(5);
+	ls1.push_back(9);
+	ls1.remove(1);
+	ls1.print();
+
+	/*
 	ForwardList<int> fl = { 1,8,6,1,4,5 };
 	fl.print();
 	fl.remove(2);
@@ -757,8 +770,7 @@ int main()
 	{
 		fl[i] *= 2;
 	}
-
-	fl.print();
+	fl.print();	*/
 	//Queue<int> q = { 1,5,7,6 };
 	//q.print();
 	//q.enqueue(10);
