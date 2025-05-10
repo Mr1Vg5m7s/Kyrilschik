@@ -750,9 +750,6 @@ int main()
 
 	List<int> ls1 = { 1,2,3 };
 	ls1.print();
-	ls1.pop_back();
-	ls1.pop_front();
-	ls1.print();
 	ls1.push_back(3);
 	ls1.push_back(5);
 	ls1.push_back(9);

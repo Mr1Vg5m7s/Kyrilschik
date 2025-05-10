@@ -82,7 +82,18 @@ List<T>::List(const List& list)
 template<class T>
 List<T>& List<T>::operator=(const List& list)
 {
-	// TODO: вставьте здесь оператор return
+	if (this == &list)
+	{
+		return *this;
+	}
+	this->clear();
+	Node<T>* temp = list.first;
+	while (temp)
+	{
+		this->push_back(temp->value);
+		temp = temp->next;
+	}
+	return *this;
 }
 
 template<class T>
@@ -149,17 +160,18 @@ void List<T>::insert(T value, int index)
 template<class T>
 void List<T>::pop_front()
 {
-	if (size > 0)
+	if (size > 1)
 	{
-		Node<T>* pos = first;
 		first = first->next;
-		delete pos;
-		size--;
-		if (size == 0)
-		{
-			last = nullptr;
-		}
+		delete first->prev;
+		first = last = nullptr;
 	}
+	else
+	{
+		delete first;
+		first = last = nullptr;
+	}
+	size--;
 }
 
 template<class T>
@@ -188,7 +200,7 @@ void List<T>::remove(T index)
 {
 	if (index < 0 || index >= size)
 	{
-		cout << "за гранью д" << endl;
+		return;
 	}
 	else
 	{
@@ -205,6 +217,7 @@ void List<T>::remove(T index)
 			Node<T>* pos = getNode(index - 1);
 			Node<T>* temp = pos->next;
 			pos->next = pos->next->next;
+			pos->next->prev = pos;
 			delete temp;
 			size--;
 		}
@@ -214,7 +227,7 @@ void List<T>::remove(T index)
 template<class T>
 T List<T>::operator[](int index)
 {
-	return T();
+	return getNode(index)->value;
 }
 
 template<class T>
@@ -232,4 +245,5 @@ void List<T>::print()
 template<class T>
 void List<T>::clear()
 {
+
 }

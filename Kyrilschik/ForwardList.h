@@ -343,5 +343,4 @@ ForwardList<T> ForwardList<T>::operator+(const ForwardList<T>& list)
 		temp = temp->next;
 	}
 	return result;
-
 }
