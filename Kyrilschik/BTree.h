@@ -17,7 +17,8 @@ struct BTreeNode
 	void print()
 	{
 		if      (left != nullptr) left->print();
-		cout    << value << " ";
+		//cout    << value << " ";
+		value.print();
 		if      (right != nullptr) right->print();
 	}
 
@@ -43,14 +44,31 @@ class BTree
 	BTreeNode<TKey, TVal>* root = nullptr;
 
 
-	BTreeNode<TKey, TVal>* push_r;
+	BTreeNode<TKey, TVal>* push_r(const TKey& key, const TVal& value, BTreeNode<TKey, TVal>*& node);
 public:
 	~BTree();
 	void print();
 	void clear();
 	bool push(const TKey key,const TVal& value);
 	TVal* getValue(const TKey& key);
+	bool push_r(const TKey& key, const TVal& value);
 };
+
+template<class TKey, class TVal>
+BTreeNode<TKey, TVal>* BTree<TKey, TVal>::push_r(const TKey& key, const TVal& value, BTreeNode<TKey, TVal>*& node)
+{
+	if (!node)
+	{
+		node = new BTreeNode<TKey, TVal>(key, value);
+		return node;
+	}
+
+	if (key < node->key)
+		node->left = push_r(key, value, node->left);
+	else if (key > node->key)
+		node->right = push_r(key, value, node->right);
+	return node;
+}
 
 template<class TKey, class TVal>
 BTree<TKey, TVal>::~BTree()
@@ -120,4 +138,10 @@ TVal* BTree<TKey, TVal>::getValue(const TKey& key)
 	if (root)
 		root->getValue(key);
 	return nullptr;
+}
+
+template<class TKey, class TVal>
+bool BTree<TKey, TVal>::push_r(const TKey& key, const TVal& value)
+{
+	return push_r(key, value, root);
 }

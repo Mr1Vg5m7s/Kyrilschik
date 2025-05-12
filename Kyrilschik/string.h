@@ -44,6 +44,27 @@ public:
 
 	friend ostream& operator<< (ostream& out, const String& obj);
 	friend istream& operator>> (istream& in, String& obj);
+
+	bool operator==(const String& obj) const
+	{
+		if (this == &obj)
+		{
+			return true;
+		}
+
+		for (size_t i = 0; i < size; i++)
+		{
+			if (str[i] != obj.str[i])
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+
+	bool operator<(const String st) const;
+	bool operator>(const String st) const;
+
 };
 
 int String::totalObjects = 0;

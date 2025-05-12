@@ -13,6 +13,8 @@
 #include"var.h"
 #include "Queue.h"
 #include"ForwardList.h"
+#include"BasePolice.h"
+
 
 using namespace std;
 enum Color
@@ -749,14 +751,21 @@ int main()
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
 
-	BTree<int, int> bt;
-	bt.push(20, 20);
-	bt.push(10, 10);
-	bt.push(40, 40);
-	bt.push(70, 70);
+
+	BasePolice base;
+	base.addProtocol();
+	base.addProtocol();
+	base.addProtocol();
+	base.printAll();
+
+	/*BTree<int, int> bt;
+	bt.push_r(20, 20);
+	bt.push_r(10, 10);
+	bt.push_r(40, 40);
+	bt.push_r(70, 70);
 	bt.push(5, 5);
 	bt.push(34, 34);
-	bt.print();
+	bt.print();*/
 
 
 	/*List<int> ls1 = {1,2,3};

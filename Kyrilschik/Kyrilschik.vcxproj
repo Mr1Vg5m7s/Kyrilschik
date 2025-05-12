@@ -127,12 +127,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BasePolice.cpp" />
     <ClCompile Include="cash.cpp" />
     <ClCompile Include="Let%27s GO.cpp" />
     <ClCompile Include="string.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Array.h" />
+    <ClInclude Include="BasePolice.h" />
     <ClInclude Include="BTree.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="PriorityQueue.h" />
