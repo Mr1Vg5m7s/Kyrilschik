@@ -4,6 +4,7 @@
 #include<fstream>
 #include<algorithm>
 
+#include"BTree.h"
 #include"Array.h"
 #include"string.h"
 #include"List.h"
@@ -748,13 +749,24 @@ int main()
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
 
-	List<int> ls1 = { 1,2,3 };
+	BTree<int, int> bt;
+	bt.push(20, 20);
+	bt.push(10, 10);
+	bt.push(40, 40);
+	bt.push(70, 70);
+	bt.push(5, 5);
+	bt.push(34, 34);
+	bt.print();
+
+
+	/*List<int> ls1 = {1,2,3};
 	ls1.print();
 	ls1.push_back(3);
 	ls1.push_back(5);
 	ls1.push_back(9);
 	ls1.remove(1);
-	ls1.print();
+	ls1.print();*/
+
 
 	/*
 	ForwardList<int> fl = { 1,8,6,1,4,5 };
