@@ -131,7 +131,7 @@ bool BTree<TKey, TVal>::push(const TKey key, const TVal& value)
 		}
 	} while (true);
 }
-
+/*
 template<class TKey, class TVal>
 TVal* BTree<TKey, TVal>::getValue(const TKey& key)
 {
@@ -139,7 +139,7 @@ TVal* BTree<TKey, TVal>::getValue(const TKey& key)
 		root->getValue(key);
 	return nullptr;
 }
-
+*/
 template<class TKey, class TVal>
 bool BTree<TKey, TVal>::push_r(const TKey& key, const TVal& value)
 {

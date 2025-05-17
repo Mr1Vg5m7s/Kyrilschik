@@ -134,11 +134,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Array.h" />
-    <ClInclude Include="BasePolice.h" />
-    <ClInclude Include="BTree.h" />
+    <ClInclude Include="Inherit.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="PriorityQueue.h" />
     <ClInclude Include="Queue.h" />
+    <ClInclude Include="Relation.h" />
     <ClInclude Include="REservoir.h" />
     <ClInclude Include="var.h" />
     <ClInclude Include="Акфсешщт.h" />

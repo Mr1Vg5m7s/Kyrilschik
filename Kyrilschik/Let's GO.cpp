@@ -14,6 +14,8 @@
 #include "Queue.h"
 #include"ForwardList.h"
 #include"BasePolice.h"
+#include"Relation.h"
+#include"Inherit.h"
 
 
 using namespace std;
@@ -752,11 +754,29 @@ int main()
 	cout.setf(ios::boolalpha);
 
 
-	BasePolice base;
-	base.addProtocol();
-	base.addProtocol();
-	base.addProtocol();
-	base.printAll();
+	Human h("Svbg  erana", 16);
+	h.info();
+
+	FootbalPlayer fp;
+	fp.info();
+	/*
+	Engine1* engine= new Engine1;
+	Car2 car2(engine);
+	car2.info();
+
+	
+	STO sto;
+	sto.stEngineToStend(car2.getEngine());
+	sto.upPower(100);
+	car2.info();
+
+	car2.setEngine(sto.getEngine());
+	car2.info();*/
+	//BasePolice base;
+//	base.addProtocol();
+//	base.addProtocol();
+//	base.addProtocol();
+//	base.printAll();
 
 	/*BTree<int, int> bt;
 	bt.push_r(20, 20);
