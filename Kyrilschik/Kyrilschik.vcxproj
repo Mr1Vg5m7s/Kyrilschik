@@ -133,13 +133,20 @@
     <ClCompile Include="string.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animal.h" />
     <ClInclude Include="Array.h" />
+    <ClInclude Include="BasePolice.h" />
+    <ClInclude Include="BaseQueue.h" />
+    <ClInclude Include="BTree.h" />
+    <ClInclude Include="ForwardList.h" />
     <ClInclude Include="Inherit.h" />
     <ClInclude Include="List.h" />
+    <ClInclude Include="Passport.h" />
     <ClInclude Include="PriorityQueue.h" />
     <ClInclude Include="Queue.h" />
     <ClInclude Include="Relation.h" />
     <ClInclude Include="REservoir.h" />
+    <ClInclude Include="Sh.h" />
     <ClInclude Include="var.h" />
     <ClInclude Include="Акфсешщт.h" />
   </ItemGroup>

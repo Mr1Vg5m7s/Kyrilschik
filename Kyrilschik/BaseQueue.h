@@ -3,24 +3,22 @@
 #include<initializer_list>
 
 #include "Node.h"
-#include "Stack.h"
-#include "BaseQueue.h"
-//hdfghfghfg/crjkmrj vscktq b dct j nt,t crjkmrj ytdjpvj;ys[ ;tkfybq]
 
-using namespace std; 
+using namespace std;
 
 template<class T>
-class Queue : public BaseQueue<T>
+class BaseQueue
 {
 	Node<T>* first = nullptr;
 	Node<T>* last = nullptr;
 	size_t   size = 0;
+
 public:
-	Queue();
-	Queue(initializer_list<T> list);
-	Queue(const Queue& obj);
-	Queue& operator=(const Queue& obj);
-	~Queue();
+	BaseQueue();
+	BaseQueue(initializer_list<T> list);
+	BaseQueue(const BaseQueue& obj);
+	BaseQueue& operator=(const BaseQueue& obj);
+	~BaseQueue();
 
 	void enqueue(T value);
 	void dequeue();
@@ -28,17 +26,16 @@ public:
 
 	void clear();
 	void print();
-
 	size_t length();
-	
-	//void ring();
+
+	void ring();
 };
 
 template<class T>
-Queue<T>::Queue() { }
+BaseQueue<T>::BaseQueue() { }
 
 template<class T>
-Queue<T>::Queue(initializer_list<T> list)
+BaseQueue<T>::BaseQueue(initializer_list<T> list)
 {
 	for (auto elem : list)
 	{
@@ -47,25 +44,24 @@ Queue<T>::Queue(initializer_list<T> list)
 }
 
 template<class T>
-Queue<T>::Queue(const Queue& obj)
+BaseQueue<T>::BaseQueue(const BaseQueue& obj)
 {
 }
 
 template<class T>
-Queue<T>& Queue<T>::operator=(const Queue& obj)
+BaseQueue<T>& BaseQueue<T>::operator=(const BaseQueue& obj)
 {
-	// TODO: вставьте здесь оператор return
-
+	// TODO:    return
 }
 
 template<class T>
-Queue<T>::~Queue()
+BaseQueue<T>::~BaseQueue()
 {
 	this->clear();
 }
-
+/*
 template<class T>
-void Queue<T>::enqueue(T value)
+void BaseQueue<T>::enqueue(T value)
 {
 	if (size == 0)
 	{
@@ -77,10 +73,10 @@ void Queue<T>::enqueue(T value)
 		last = last->next;
 	}
 	size++;
-}
+}*/
 
 template<class T>
-void Queue<T>::dequeue()
+void BaseQueue<T>::dequeue()
 {
 	if (size > 0)
 	{
@@ -89,20 +85,18 @@ void Queue<T>::dequeue()
 		delete temp;
 		size--;
 		if (size == 0)
-		{
 			last = nullptr;
-		}
 	}
 }
 
 template<class T>
-T& Queue<T>::peek()
+T& BaseQueue<T>::peek()
 {
 	return first->value;
 }
 
 template<class T>
-void Queue<T>::clear()
+void BaseQueue<T>::clear()
 {
 	Node<T>* temp = first;
 	while (temp)
@@ -116,7 +110,7 @@ void Queue<T>::clear()
 }
 
 template<class T>
-void Queue<T>::print()
+void BaseQueue<T>::print()
 {
 	Node<T>* temp = first;
 	while (temp)
@@ -124,20 +118,24 @@ void Queue<T>::print()
 		cout << temp->value << " ";
 		temp = temp->next;
 	}
+	cout << endl;
 }
 
 template<class T>
-size_t Queue<T>::length()
+size_t BaseQueue<T>::length()
 {
 	return size;
 }
 
-/*template<class T>
-void Queue<T>::ring()
+template<class T>
+void BaseQueue<T>::ring()
 {
+	/*enqueue(peek());
+	dequeue();*/
+
 	last->next = first;
 	first = first->next;
 	last = last->next;
 	last->next = nullptr;
 
-}*/
+}

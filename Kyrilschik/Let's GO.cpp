@@ -16,6 +16,9 @@
 #include"BasePolice.h"
 #include"Relation.h"
 #include"Inherit.h"
+#include"Passport.h"
+#include"Animal.h"
+#include "Sh.h"
 
 
 using namespace std;
@@ -752,13 +755,38 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
+	//0960600380
+
+	
+	Circle c("cicle", 5);
+	c.getType();
+	cout << "Area: " << c.Area() << endl;
 
 
-	Human h("Svbg  erana", 16);
-	h.info();
 
-	FootbalPlayer fp;
-	fp.info();
+	/*
+	Cat c("Tom", 5);
+ 
+	Animal* pm = new Mouse("Jerry", 3);
+
+	Animal* pd = new Dog("Spike", 7);
+
+	Animal* an[] = { pm, pd };
+	for (size_t i = 0; i < 2; i++)
+	{
+		cout << c.getType() << endl;
+		c.info();
+		cout << c.voice() << endl;
+		cout << endl;
+	}
+	*/
+
+
+	//Human h("Svbg  erana", 16);
+	//h.info();
+
+	//FootbalPlayer fp;
+	//fp.info();
 	/*
 	Engine1* engine= new Engine1;
 	Car2 car2(engine);

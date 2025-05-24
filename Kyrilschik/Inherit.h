@@ -19,5 +19,5 @@ public:
 
 class FootbalPlayer : public Human
 {
-
+	//Последние 2 урока супер интересные
 };
