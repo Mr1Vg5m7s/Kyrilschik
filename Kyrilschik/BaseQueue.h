@@ -121,6 +121,8 @@ void BaseQueue<T>::print()
 	cout << endl;
 }
 
+
+ /////////
 template<class T>
 size_t BaseQueue<T>::length()
 {

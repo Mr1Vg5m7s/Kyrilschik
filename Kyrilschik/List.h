@@ -4,6 +4,7 @@
 #include<algorithm>
 
 #include "Node.h"
+#include "func.h"
 
 using namespace std;
 template<class T>
@@ -33,7 +34,9 @@ public:
 	T operator[](int index);
 
 	void print();
+	void print(int x, int y);
 	void clear();
+	size_t lenght() const;
 
 };
 
@@ -243,7 +246,26 @@ void List<T>::print()
 }
 
 template<class T>
+void List<T>::print(int x, int y)
+{
+	Node<T>* temp = first;
+	while (temp)
+	{
+		gotoxy(x, y++);
+		cout << temp->value;
+		temp = temp->next;
+	}
+	cout << endl;
+}
+
+template<class T>
 void List<T>::clear()
 {
 
+}
+
+template<class T>
+size_t List<T>::lenght() const
+{
+	return this->size;
 }
