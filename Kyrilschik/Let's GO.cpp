@@ -20,6 +20,8 @@
 #include"Animal.h"
 #include "Sh.h"
 #include"WarofWorld.h"
+#include"Logger.h"
+#include "System.h"
 
 
 
@@ -332,7 +334,17 @@ void addStolbtoINDEX2D(T**& p, int& row, int col, int index=0)
 	}
 	col++;
 }
+/*
+void division(int a, int b, FileLogger* flog)
+{
+	if (b == 0)
+	{
+		flog->logError("Деление на ноль невозможно!");
+		return;
+	}
 
+	cout << (double)a / b << endl;
+}*/
 
 int main()
 {
@@ -342,9 +354,34 @@ int main()
 	//0960600380
 
 
-	WarOfWorld war(10);
-	war.game();
+	system("cls");
+	Computer* pc = new Computer("PC", 16, "NVIDIA RTX 3060");
+	cout << pc << endl;
+	cout << endl;
+	/////
+	/*PersonalComputer* ppc = new PersonalComputer("PPc", 32, "NVIDIA RTX 3080", true, "Realtek", "Logitech");
+	ppc->info();
+	cout << endl;
+	/////
+	Laptop* lp = new Laptop("Laptop", 8, "NVIDIA RTX 2060", 15, 5, 2);
+	lp->info();
+	cout << endl;
+	/////
+	PortServer* ps = new PortServer("PortServer45", 16, "NVIDIA RTX 5090", 16, 900, 40, 20, 4, "626444", true, "IP333", "Windows 10");
+	ps->info();
+	cout << endl;*/
 
+
+
+	//Animal* c = new Cat("Tom", 3);
+	//war.game();
+
+	//int a = 9;
+	//int b = 7;
+	//ConsoleLogger* clog = new ConsoleLogger();
+
+	//FileLogger* flog = new FileLogger("log.txt");
+	//division(a, b, flog);
 
 	//Dark* Me = new Skeleton(1, 0);
 	//cout << Me << endl;

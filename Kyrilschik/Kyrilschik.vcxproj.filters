@@ -27,9 +27,6 @@
     <ClCompile Include="BasePolice.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="WarofWorld.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Array.h">
@@ -80,7 +77,10 @@
     <ClInclude Include="Sh.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="WarofWorld.h">
+    <ClInclude Include="Logger.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="System.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

@@ -131,7 +131,6 @@
     <ClCompile Include="cash.cpp" />
     <ClCompile Include="Let%27s GO.cpp" />
     <ClCompile Include="string.cpp" />
-    <ClCompile Include="WarofWorld.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animal.h" />
@@ -142,14 +141,15 @@
     <ClInclude Include="ForwardList.h" />
     <ClInclude Include="Inherit.h" />
     <ClInclude Include="List.h" />
+    <ClInclude Include="Logger.h" />
     <ClInclude Include="Passport.h" />
     <ClInclude Include="PriorityQueue.h" />
     <ClInclude Include="Queue.h" />
     <ClInclude Include="Relation.h" />
     <ClInclude Include="REservoir.h" />
     <ClInclude Include="Sh.h" />
+    <ClInclude Include="System.h" />
     <ClInclude Include="var.h" />
-    <ClInclude Include="WarofWorld.h" />
     <ClInclude Include="Акфсешщт.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

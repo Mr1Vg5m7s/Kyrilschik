@@ -33,6 +33,7 @@ public:
 
 class Cat : public Animal
 {
+	int mouse = 5;
 public:
 	Cat(string n, int a) : Animal(n, a) {}
 	
@@ -41,10 +42,16 @@ public:
 		return "Cat";
 	}
 
+	virtual int getMouse() 
+	{
+		return mouse;
+	}
+
 	string voice()
 	{
 		return "ћ€у, когда есть?";
 	}
+
 };
 
 class Mouse : public Animal

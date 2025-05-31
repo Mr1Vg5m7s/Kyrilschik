@@ -1,12 +1,11 @@
 #pragma once
 #include<iostream>
 #include<initializer_list>
-#include<algorithm>
 
 #include "Node.h"
-#include "func.h"
 
 using namespace std;
+
 template<class T>
 class List
 {
@@ -29,16 +28,24 @@ public:
 
 	void pop_front();
 	void pop_back();
-	void remove(T index);
+	void remove(int index);
 
-	T operator[](int index);
+	T& operator[](int index);
 
 	void print();
 	void print(int x, int y);
 	void clear();
-	size_t lenght() const;
+	int length() const;
 
 };
+
+void gotoxy(int x, int y)
+{
+	COORD coord;
+	coord.X = x;
+	coord.Y = y;
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+}
 
 template<class T>
 inline Node<T>* List<T>::getNode(int index)
@@ -80,6 +87,12 @@ List<T>::List(initializer_list<T> list)
 template<class T>
 List<T>::List(const List& list)
 {
+	Node<T>* temp = list.first;
+	while (temp)
+	{
+		this->push_back(temp->value);
+		temp = temp->next;
+	}
 }
 
 template<class T>
@@ -89,13 +102,16 @@ List<T>& List<T>::operator=(const List& list)
 	{
 		return *this;
 	}
+
 	this->clear();
+
 	Node<T>* temp = list.first;
 	while (temp)
 	{
 		this->push_back(temp->value);
 		temp = temp->next;
 	}
+
 	return *this;
 }
 
@@ -108,7 +124,7 @@ List<T>::~List()
 template<class T>
 void List<T>::push_front(T value)
 {
-	if (size==0)
+	if (size == 0)
 	{
 		first = last = new Node<T>(value);
 	}
@@ -124,7 +140,7 @@ void List<T>::push_front(T value)
 template<class T>
 void List<T>::push_back(T value)
 {
-	if (size==0)
+	if (size == 0)
 	{
 		first = last = new Node<T>(value);
 	}
@@ -151,7 +167,7 @@ void List<T>::insert(T value, int index)
 	else
 	{
 		Node<T>* newNode = new Node<T>(value);
-		Node<T>* pos = getNode(index-1);
+		Node<T>* pos = getNode(index - 1);
 		newNode->next = pos->next;
 		newNode->next->prev = newNode;
 		pos->next = newNode;
@@ -167,7 +183,7 @@ void List<T>::pop_front()
 	{
 		first = first->next;
 		delete first->prev;
-		first = last = nullptr;
+		first->prev = nullptr;
 	}
 	else
 	{
@@ -178,7 +194,7 @@ void List<T>::pop_front()
 }
 
 template<class T>
-void List<T>::pop_back()
+inline void List<T>::pop_back()
 {
 	if (size > 0)
 	{
@@ -190,7 +206,7 @@ void List<T>::pop_back()
 		}
 		else
 		{
-			last = getNode(size - 2);
+			last = last->prev;
 			delete last->next;
 			last->next = nullptr;
 		}
@@ -199,7 +215,7 @@ void List<T>::pop_back()
 }
 
 template<class T>
-void List<T>::remove(T index)
+void List<T>::remove(int index)
 {
 	if (index < 0 || index >= size)
 	{
@@ -228,7 +244,7 @@ void List<T>::remove(T index)
 }
 
 template<class T>
-T List<T>::operator[](int index)
+T& List<T>::operator[](int index)
 {
 	return getNode(index)->value;
 }
@@ -236,23 +252,23 @@ T List<T>::operator[](int index)
 template<class T>
 void List<T>::print()
 {
-	Node<T>* pos = first;
-	while (pos)
+	Node<T>* temp = first;
+	while (temp)
 	{
-		cout << pos->value << " ";
-		pos = pos->next;
+		cout << temp->value;// << " ";
+		temp = temp->next;
 	}
 	cout << endl;
 }
 
 template<class T>
-void List<T>::print(int x, int y)
+inline void List<T>::print(int x, int y)
 {
 	Node<T>* temp = first;
 	while (temp)
 	{
 		gotoxy(x, y++);
-		cout << temp->value;
+		cout << temp->value;// << " ";
 		temp = temp->next;
 	}
 	cout << endl;
@@ -261,11 +277,19 @@ void List<T>::print(int x, int y)
 template<class T>
 void List<T>::clear()
 {
-
+	Node<T>* temp = first;
+	while (temp)
+	{
+		first = first->next;
+		delete temp;
+		temp = first;
+	}
+	first = last = nullptr;
+	size = 0;
 }
 
 template<class T>
-size_t List<T>::lenght() const
+int List<T>::length() const
 {
-	return this->size;
+	return size;
 }
