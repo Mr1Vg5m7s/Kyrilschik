@@ -16,7 +16,7 @@ public:
 	virtual void logError(string error) override
 	{
 		cout << error << endl;
-	}
+	} 
 };
 
 class FileLogger : public Logger

@@ -3,6 +3,8 @@
 #include<iomanip>
 #include<fstream>
 #include<algorithm>
+#include<map>
+#include<string>
 
 #include"BTree.h"
 #include"Array.h"
@@ -21,9 +23,9 @@
 #include "Sh.h"
 #include"WarofWorld.h"
 #include"Logger.h"
-#include "System.h"
-
-
+#include"System.h"
+#include"MyException.h"
+#include"WorldMap.h"
 
 using namespace std;
 
@@ -346,23 +348,49 @@ void division(int a, int b, FileLogger* flog)
 	cout << (double)a / b << endl;
 }*/
 
+double division(int a, int b)
+{
+	if (b == 0)
+		throw MyException(__DATE__, __TIME__, __FILE__, __LINE__, "Division by zero, b = 0");
+	return (double)a / b;
+}
+
 int main()
 {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
 	//0960600380
+	
+	ifstream file("pont.txt");
+	string text;
+	if (file.is_open())
+	{
+		string tt;
+		while (file >> tt)
+		{
+			text += tt + " ";
+		}
+	}
+	else
+	{
+		return -1;
+	}
+	cout << text;
+	
+	
+	
+	//List <int> ls = { 1,2,3,4,5,6,7,8,9 };
 
-
-	system("cls");
-	Computer* pc = new Computer("PC", 16, "NVIDIA RTX 3060");
-	cout << pc << endl;
-	cout << endl;
+	//system("cls");
+	//Computer* pc = new Computer("PC", 16, "NVIDIA RTX 3060");
+	//cout << pc << endl;
+	///cout << endl;
 	/////
 	/*PersonalComputer* ppc = new PersonalComputer("PPc", 32, "NVIDIA RTX 3080", true, "Realtek", "Logitech");
 	ppc->info();
 	cout << endl;
-	/////
+	/////jk
 	Laptop* lp = new Laptop("Laptop", 8, "NVIDIA RTX 2060", 15, 5, 2);
 	lp->info();
 	cout << endl;

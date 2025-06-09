@@ -1,3 +1,4 @@
+
 #pragma once
 #include<iostream>
 #include<initializer_list>
@@ -29,7 +30,7 @@ public:
 	void pop_front();
 	void pop_back();
 	void remove(int index);
-
+	 
 	T& operator[](int index);
 
 	void print();

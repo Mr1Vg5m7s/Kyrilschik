@@ -21,7 +21,7 @@ public:
 		cout << "RAM: " << ram << " GB" << endl;
 		cout << "GPU: " << gpu << endl;
 	}
-
+	//
 	virtual ostream& print(ostream& out) const
 	{
 		out << "Computer Name: " << name << endl;

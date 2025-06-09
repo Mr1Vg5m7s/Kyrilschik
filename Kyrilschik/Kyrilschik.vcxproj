@@ -142,6 +142,7 @@
     <ClInclude Include="Inherit.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="Logger.h" />
+    <ClInclude Include="MyException.h" />
     <ClInclude Include="Passport.h" />
     <ClInclude Include="PriorityQueue.h" />
     <ClInclude Include="Queue.h" />
@@ -150,6 +151,7 @@
     <ClInclude Include="Sh.h" />
     <ClInclude Include="System.h" />
     <ClInclude Include="var.h" />
+    <ClInclude Include="WorldMap.h" />
     <ClInclude Include="Акфсешщт.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
