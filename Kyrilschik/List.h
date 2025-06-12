@@ -51,9 +51,9 @@ void gotoxy(int x, int y)
 template<class T>
 inline Node<T>* List<T>::getNode(int index)
 {
-	if (index < 0 || index >= size) {
-		cout<<"неправильное число"<<endl;
-		return nullptr;
+	if (index < 0 || index >= size) {           //
+		cout<<"неправильное число"<<endl;   //
+		return nullptr;                     //
 	}
 	Node<T>* pos;
 	if (index < size / 2)
@@ -161,9 +161,9 @@ void List<T>::push_back(T value)
 template<class T>
 void List<T>::insert(T value, int index)
 {
-	if (index < 0 || index >= size) {
-		cout<<"неправильное число"<<endl;
-		return;
+	if (index < 0 || index >= size) {          //
+		cout<<"неправильное число"<<endl;  // 
+		return;                            //
 	}
 	if (index == 0)
 	{
@@ -178,7 +178,7 @@ void List<T>::insert(T value, int index)
 		Node<T>* newNode = new Node<T>(value);
 		Node<T>* pos = getNode(index - 1);
 		
-		if (!pos) {return;}
+		if (!pos) {return;}  // 
 		
 		newNode->next = pos->next;
 		newNode->next->prev = newNode;
@@ -229,9 +229,9 @@ inline void List<T>::pop_back()
 template<class T>
 void List<T>::remove(int index)
 {
-	if (index < 0 || index >= size) {
-		cout<<"неправильное число"<<endl;
-		return;
+	if (index < 0 || index >= size) {          //
+		cout<<"неправильное число"<<endl;  //
+		return;                            //
 	}
 	if (index == 0)
 	{
@@ -245,7 +245,7 @@ void List<T>::remove(int index)
 	{
 		Node<T>* pos = getNode(index - 1);
 		
-		if (!pos || !pos->next || !pos->next->next) {return;}
+		if (!pos || !pos->next || !pos->next->next) {return;}   //
 		
 		Node<T>* temp = pos->next;
 		pos->next = pos->next->next;
@@ -267,7 +267,7 @@ void List<T>::print()
 	Node<T>* temp = first;
 	while (temp)
 	{
-		cout << temp->value;// << " ";
+		cout << temp->value;
 		temp = temp->next;
 	}
 	cout << endl;
